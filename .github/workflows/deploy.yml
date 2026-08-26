@@ -46,7 +46,8 @@ jobs:
           context: .
           push: true
           tags: pablitodocker/app-backend:latest
-          
+          no-cache: true
+
       - name: Escanear contenedor con trivy
         uses: aquasecurity/trivy-action@master
         with: 
