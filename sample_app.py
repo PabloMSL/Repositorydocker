@@ -1,5 +1,6 @@
 import pymysql
 from flask import Flask
+import os
 
 sample = Flask(__name__)
 
