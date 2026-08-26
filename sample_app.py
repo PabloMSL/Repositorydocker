@@ -15,4 +15,5 @@ def home():
     return f"<h1>Bienvenido a mi aplicación Flask</h1><p>{db_status}</p>"
 
 if __name__ == "__main__":
-    sample.run(host='0.0.0.0', port=5050, debug=True) # nosec B104
+    modo_debug = os.getenv("FLASK_DEBUG", "True").lower() == "true"
+    sample.run(host='0.0.0.0', port=5050, debug=modo_debug) # nosec B104
