@@ -14,7 +14,7 @@ services:
 
   servidor-bd:
     image: mysql:8.0
-    container_name: servidor-bd-ejemplo
+    container_name: servidor-bd
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -30,7 +30,7 @@ services:
 
   app-backend:
     build: .
-    container_name: app-backend-ejemplo
+    container_name: app-backend
     volumes:
       - .:/home/myapp
     environment:
