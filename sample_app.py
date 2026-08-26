@@ -6,7 +6,7 @@ sample = Flask(__name__)
 @sample.route("/")
 def home():
     try:
-        conn = pymysql.connect(host='servidor-bd-ejemplo', user='root', password='sena123', database='082_db')
+        conn = pymysql.connect(host='servidor-bd-ejemplo', user='root', password='os.getenv("MYSQL_ROOT_PASSWORD")', database='082_db')
         conn.close()
         db_status = "Conexión exitosa a la base de datos"
     except Exception as e:
