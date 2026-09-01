@@ -1,2 +1,25 @@
 GHSA-6v7p-g79w-8964
 CVE-2025-47273
+
+# gzip - sin parche disponible (status: affected)
+CVE-2026-41992
+
+# libacl1 - sin parche disponible (status: affected)
+CVE-2026-54369
+
+# ncurses / libtinfo6 / ncurses-base / ncurses-bin - sin parche disponible (status: affected)
+CVE-2025-69720
+
+# libsqlite3-0 - sin parche disponible (status: affected)
+CVE-2026-11822
+CVE-2026-11824
+
+# perl-base - sin parche disponible (status: affected / fix_deferred)
+CVE-2026-13221
+CVE-2026-42496
+CVE-2026-8376
+CVE-2026-42497
+CVE-2026-48962
+CVE-2026-57432
+CVE-2026-57433
+CVE-2026-9538

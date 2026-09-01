@@ -42,6 +42,17 @@ services:
     depends_on:
       - servidor-bd
 
+  dozzle:
+    image: amir20/dozzle:latest
+    container-name: dozzle
+    restart: always
+    volumes:
+      - /var/run/docker.sock:var/run/docker.sock
+    ports:
+      - "8080:8080"
+    networks:
+      - red-cba
+
 networks:
   red-cba:
     name: red-cba-ejemplo

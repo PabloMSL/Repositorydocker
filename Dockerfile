@@ -1,17 +1,18 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 WORKDIR /app
 
-RUN apt-get update && apt-get upgrade -y && rm -rf /lib/apt/lists/*
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN pip uninstall -y msgpack setuptools && \
-    pip install --no-cache-dir --upgrade "msgpack>=1.2.1" "setuptools>=78.1.1"
-
-RUN pip install --no-cache-dir --upgrade pip "setuptools>=78.1.1"
+RUN pip install --no-cache-dir --upgrade pip "setuptools>=78.1.1" "msgpack>=1.2.1"
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
+
+RUN useradd --create-home appuser
+USER appuser
 
 EXPOSE 5050
 
